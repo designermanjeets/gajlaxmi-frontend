@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   baseURL: 'http://localhost:4200', 
-  URL: 'http://127.0.0.1:8000/api', // Change only the domain part, keeping "/api" intact
-  storageURL: 'http://127.0.0.1:8000' // Change only the laravel primary domain
+  URL: 'https://api.bogomenus.com/public/api', // Change only the domain part, keeping "/api" intact
+  storageURL: 'https://api.bogomenus.com/public' // Change only the laravel primary domain
 };
 
 /*
