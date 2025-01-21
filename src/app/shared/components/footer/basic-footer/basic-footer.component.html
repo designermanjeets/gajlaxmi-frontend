@@ -1,13 +1,13 @@
 <div class="container-fluid-lg">
     <div class="main-footer section-b-space">
         <div class="row g-md-4 g-3">
-            <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="col-xl-4 col-lg-4 col-sm-6">
                 <div class="footer-logo">
                     <app-footer-logo [data]="data" [footer]="footer"></app-footer-logo>
                     <app-footer-about [data]="data"></app-footer-about>
                 </div>
             </div>
-            <div 
+            <!-- <div 
                 class="col-xl-2 col-lg-3 col-md-4 col-sm-6"
                 (click)="toggle('categories')">
                 <div class="footer-title" [class.show]="active['categories']">
@@ -15,17 +15,23 @@
                 </div>
                 <div class="footer-contain">
                     <app-footer-categories [data]="data"></app-footer-categories>
-                    <!-- No Data -->
+                   
                     <app-no-data [class]="'no-data-footer'" [text]="'no_category_found'" *ngIf="!data?.footer?.footer_categories?.length"></app-no-data>
                 </div>
-            </div>
-            <div class="col-xl col-lg-2 col-sm-3"
+            </div> -->
+            <div class="col-xl-2 col-lg-2 col-sm-3"
                 (click)="toggle('useful_link')">
                 <div class="footer-title" [class.show]="active['useful_link']">
                     <h4>{{ 'Useful Links' | translate }}</h4>
                 </div>
                 <div class="footer-contain">
-                    <app-footer-links [links]="data?.footer?.useful_link || []"></app-footer-links>
+                    <!-- <app-footer-links [links]="data?.footer?.useful_link || []"></app-footer-links> -->
+                     <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/term-condition">Terms and Conditions</a></li>
+                        <li><a href="/shipping-delivary">Shipping + Delivary</a></li>
+                        <li><a href="/return-exchange">Return + Exchange</a></li>
+                     </ul>
                     <!-- No Data -->
                     <app-no-data [class]="'no-data-footer'" [text]="'no_link_found'" *ngIf="!data?.footer?.useful_link?.length"></app-no-data>
                 </div>
