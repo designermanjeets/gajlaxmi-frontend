@@ -46,7 +46,7 @@
         [iconClass]="'ri-add-line'"
         [spinner]="false"
         (click)="externalProductLink(product.external_url)">
-        {{ (product.external_button_text ? product.external_button_text : 'buy_now') | translate }}
+        {{ (product.external_button_text ? product.external_button_text : 'Buy Now') | translate }}
     </app-button>
 </ng-template>
 <app-product-detail-modal #productDetailModal [product]="product"></app-product-detail-modal>
