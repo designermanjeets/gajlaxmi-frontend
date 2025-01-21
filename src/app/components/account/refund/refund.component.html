@@ -1,6 +1,6 @@
 <div class="title-header">
     <div class="d-flex align-items-center">
-        <h5>{{ 'refund' | translate }}</h5>
+        <h5>{{ 'Refund' | translate }}</h5>
     </div>
 </div>
 <div class="total-box mt-0" *ngIf="(refund$ | async)?.data?.length">
@@ -8,10 +8,10 @@
         <table>
             <tbody>
                 <tr>
-                    <th>{{ 'order' | translate }}</th>
-                    <th>{{ 'status' | translate }}</th>
-                    <th class="reason-table">{{ 'reason' | translate }}</th>
-                    <th>{{ 'created_at' | translate }}</th>
+                    <th>{{ 'Order' | translate }}</th>
+                    <th>{{ 'Status' | translate }}</th>
+                    <th class="reason-table">{{ 'Reason' | translate }}</th>
+                    <th>{{ 'Created At' | translate }}</th>
                 </tr>
                 <tr *ngFor="let refund of (refund$ | async)?.data let i = index">
                     <td><span class="fw-bolder">#{{ refund?.order?.order_number }}</span></td>
@@ -36,7 +36,7 @@
 <app-no-data
     [class]="'no-data-added'"
     [image]="'assets/svg/empty-items.svg'"
-    [text]="'no_refunds_found'"
-    [description]="'you_have_no_refunds_yet'"
+    [text]="'No Refunds Found'"
+    [description]="'You Have No Refunds yet'"
     *ngIf="!(refund$ | async)?.data?.length">
 </app-no-data>

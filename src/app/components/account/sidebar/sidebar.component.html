@@ -36,55 +36,55 @@
 <ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/dashboard']" (click)="openMenu(false)">
-            <i class="ri-home-line me-2"></i> {{ 'dashboard' | translate }}
+            <i class="ri-home-line me-2"></i> {{ 'Dashboard' | translate }}
         </a>
     </li>
 
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/notifications']" (click)="openMenu(false)">
-            <i class="ri-notification-line me-2"></i> {{ 'notifications' | translate }}
+            <i class="ri-notification-line me-2"></i> {{ 'Notifications' | translate }}
             <span class="notification-count" *ngIf="unreadNotificationCount">{{ unreadNotificationCount }}</span>
         </a>
     </li>
 
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/bank-details']" (click)="openMenu(false)">
-            <i class="ri-bank-line me-2"></i> {{ 'bank_details' | translate }}
+            <i class="ri-bank-line me-2"></i> {{ 'Bank Details' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/wallet']" (click)="openMenu(false)">
-            <i class="ri-wallet-line me-2"></i> {{ 'my_wallet' | translate }}
+            <i class="ri-wallet-line me-2"></i> {{ 'My Wallet' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/point']" (click)="openMenu(false)">
-            <i class="ri-coin-line me-2"></i> {{ 'earning_points' | translate }}
+            <i class="ri-coin-line me-2"></i> {{ 'Earning Points' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/order']" (click)="openMenu(false)">
-            <i class="ri-file-text-line me-2"></i>{{ 'my_orders' | translate }}
+            <i class="ri-file-text-line me-2"></i>{{ 'My Orders' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/downloads']" (click)="openMenu(false)">
-            <i class="ri-download-2-line me-2"></i>{{ 'downloads' | translate }}
+            <i class="ri-download-2-line me-2"></i>{{ 'Downloads' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/refund']" (click)="openMenu(false)">
-            <i class="ri-money-dollar-circle-line me-2"></i> {{ 'refund_history' | translate }}
+            <i class="ri-money-dollar-circle-line me-2"></i> {{ 'Refund History' | translate }}
         </a>
     </li>
     <li class="nav-item" role="presentation">
         <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['/account/addresses']" (click)="openMenu(false)">
-            <i class="ri-map-pin-line me-2"></i> {{ 'saved_address' | translate }}
+            <i class="ri-map-pin-line me-2"></i> {{ 'Saved Address' | translate }}
         </a>
     </li>
     <li class="nav-item logout-cls" role="presentation">
         <a href="javascript:void(0)" class="btn" (click)="confirmationModal.openModal()">
-            <i class="ri-logout-box-r-line me-2"></i> {{ 'logout' | translate }}
+            <i class="ri-logout-box-r-line me-2"></i> {{ 'Logout' | translate }}
         </a>
     </li>
 </ul>

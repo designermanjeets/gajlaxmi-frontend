@@ -11,7 +11,7 @@
                 class="col-xl-2 col-lg-3 col-md-4 col-sm-6"
                 (click)="toggle('categories')">
                 <div class="footer-title" [class.show]="active['categories']">
-                    <h4>{{ 'categories' | translate }}</h4>
+                    <h4>{{ 'Categories' | translate }}</h4>
                 </div>
                 <div class="footer-contain">
                     <app-footer-categories [data]="data"></app-footer-categories>
@@ -22,7 +22,7 @@
             <div class="col-xl col-lg-2 col-sm-3"
                 (click)="toggle('useful_link')">
                 <div class="footer-title" [class.show]="active['useful_link']">
-                    <h4>{{ 'useful_links' | translate }}</h4>
+                    <h4>{{ 'Useful Links' | translate }}</h4>
                 </div>
                 <div class="footer-contain">
                     <app-footer-links [links]="data?.footer?.useful_link || []"></app-footer-links>
@@ -47,7 +47,7 @@
                     data?.footer?.play_store_url ||
                     data?.footer?.app_store_url">
                 <div class="footer-title contact-title">
-                    <h4>{{ 'contact_us' | translate }}</h4>
+                    <h4>{{ 'Contact Us' | translate }}</h4>
                 </div>
                 <app-footer-contact [data]="data"></app-footer-contact>
             </div>
@@ -57,9 +57,9 @@
         <div class="reserve" *ngIf="data?.footer?.footer_copyright">
             <app-footer-copyright [data]="data"></app-footer-copyright>
         </div>
-        <div class="payment"> 
+        <!-- <div class="payment"> 
             <app-footer-payment-options></app-footer-payment-options>
-        </div>
+        </div> -->
         <app-footer-social-links [data]="data" *ngIf="data?.footer?.social_media_enable"></app-footer-social-links>
     </div>
 </div>

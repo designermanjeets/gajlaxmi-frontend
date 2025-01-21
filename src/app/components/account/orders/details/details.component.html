@@ -6,13 +6,13 @@
                 <a href="javascript:void(0)" class="btn btn-md fw-bold text-light theme-bg-color"
                   *ngIf="(order?.payment_status === 'FAILED' || order?.payment_status === 'PENDING') 
                     && (order?.order_status && order?.order_status?.slug != 'cancelled') && order?.payment_method != 'cod'"
-                  (click)="payModal.openModal(order)">{{ 'pay_now' | translate }}<i class="ri-refresh-line ms-2"></i></a>
+                  (click)="payModal.openModal(order)">{{ 'Pay Now' | translate }}<i class="ri-refresh-line ms-2"></i></a>
                 <a
                   (click)="download(order.order_number)"
                   class="btn btn-md fw-bold text-light theme-bg-color ms-auto"
                   download="download"
                   *ngIf="order?.invoice_url && order?.payment_status && order?.payment_status === 'COMPLETED' && isLogin">
-                    {{ 'invoice' | translate }} <i class="ri-download-2-fill ms-2"></i>
+                    {{ 'Invoice' | translate }} <i class="ri-download-2-fill ms-2"></i>
                 </a>
             </div>
         </div>
@@ -52,11 +52,11 @@
                 <table class="table product-table">
                     <thead>
                         <tr>
-                            <th scope="col">{{ 'image' | translate }}</th>
-                            <th scope="col">{{ 'name' | translate }}</th>
-                            <th scope="col">{{ 'price' | translate }}</th>
-                            <th scope="col">{{ 'quantity' | translate }}</th>
-                            <th scope="col">{{ 'subtotal' | translate }}</th>
+                            <th scope="col">{{ 'Image' | translate }}</th>
+                            <th scope="col">{{ 'Name' | translate }}</th>
+                            <th scope="col">{{ 'Price' | translate }}</th>
+                            <th scope="col">{{ 'Quantity' | translate }}</th>
+                            <th scope="col">{{ 'Subtotal' | translate }}</th>
                             <th scope="col">{{ 'Refund Status' | translate }}</th>
                         </tr>
                     </thead>
@@ -88,11 +88,11 @@
                                     && order.order_status && order.order_status.slug == 'delivered' && 
                                     !product?.pivot?.refund_status;
                                     else noRefund" (click)="refundModal.openModal(product, order.id)">
-                                    {{ 'refund' | translate }}
+                                    {{ 'Refund' | translate }}
                                 </a>
                                 <ng-template #noRefund>
                                     <ng-container *ngIf="product.is_return === 0; else NonRefundable">
-                                        Non-Refundable
+                                        Non Refundable
                                     </ng-container>
                                     <ng-template #NonRefundable>
                                         <div class="status-{{product?.pivot?.refund_status?.toLowerCase()}}" 
@@ -101,7 +101,7 @@
                                         </div>
                                         <ng-template #disabled>
                                             <div placement="top" class="black-tooltip" ngbTooltip="Enable after delivery">
-                                                <a class="btn-theme-outline btn btn-sm d-inline-block disabled" *ngIf="!product?.pivot?.refund_status" >  {{ 'refund' | translate }}</a>
+                                                <a class="btn-theme-outline btn btn-sm d-inline-block disabled" *ngIf="!product?.pivot?.refund_status" >  {{ 'Refund' | translate }}</a>
                                             </div>
                                         </ng-template>
                                     </ng-template>
@@ -117,11 +117,11 @@
         <div class="col-xxl-8 col-lg-12 col-md-7">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="fw-semibold mb-3">{{ 'consumer_details' | translate }}</h3>
+                    <h3 class="fw-semibold mb-3">{{ 'Consumer Details' | translate }}</h3>
                     <div class="customer-detail tracking-wrapper">
                         <ul class="row g-3">
                             <li class="col-sm-6" *ngIf="order?.billing_address">
-                                <label>{{ 'billing_address' | translate }}:</label>
+                                <label>{{ 'Billing Address' | translate }}:</label>
                                 <h4 *ngIf="order?.billing_address?.state">
                                     {{ order.billing_address.street }}
                                     {{ order.billing_address.city }} {{ order.billing_address.state.name }} {{ order.billing_address.country.name }}
@@ -130,26 +130,26 @@
                                 </h4>
                             </li>
                             <li class="col-sm-6" *ngIf="order?.shipping_address && !order?.is_digital_only">
-                                <label>{{ 'shipping_address' | translate }}:</label>
+                                <label>{{ 'Shipping Address' | translate }}:</label>
                                 <h4 *ngIf="order?.shipping_address?.state">
                                     {{ order.shipping_address.street }}
                                     {{ order.shipping_address.city }} {{ order.shipping_address.state.name }} {{ order.shipping_address.country.name }}
                                     {{ order.shipping_address.pincode }} <br>
-                                    {{ 'phone' | translate }} : +{{ order.shipping_address.country_code }} {{ order.shipping_address.phone }}
+                                    {{ 'Phone' | translate }} : +{{ order.shipping_address.country_code }} {{ order.shipping_address.phone }}
                                 </h4>
                             </li>
                             <li class="col-sm-6" *ngIf="order?.delivery_description && !order?.is_digital_only">
-                                <label>{{ 'delivery_slot' | translate }}:</label>
+                                <label>{{ 'Delivery Slot' | translate }}:</label>
                                 <h4>{{ order.delivery_description }}</h4>
                             </li>
                             <li class="col-sm-3" *ngIf="order?.payment_method">
-                                <label>{{ 'payment_mode' | translate }}:</label>
+                                <label>{{ 'Payment Mode' | translate }}:</label>
                                 <div class="d-flex align-items-center gap-2">
                                     <h4>{{ order.payment_method | uppercase }}</h4>
                                 </div>
                             </li>
                             <li class="col-sm-3" *ngIf="order?.payment_method">
-                                <label>{{ 'payment_status' | translate }}:</label>
+                                <label>{{ 'Payment Status' | translate }}:</label>
                                 <div class="d-flex align-items-center gap-2">
                                     <h4>{{ order.payment_status | uppercase }}</h4>
                                 </div>
@@ -163,17 +163,17 @@
             <div class="card h-m30">
                 <div class="card-body">
                     <h3 class="fw-semibold mb-3">
-                        {{ 'summary' | translate }}
+                        {{ 'Summary' | translate }}
                     </h3>
                     <div class="tracking-total tracking-wrapper">
                         <ul>
-                            <li>{{ 'subtotal' | translate }} <span>{{ (order.amount ? order.amount : 0) | currencySymbol }}</span></li>
+                            <li>{{ 'Subtotal' | translate }} <span>{{ (order.amount ? order.amount : 0) | currencySymbol }}</span></li>
                             <li *ngIf="!order?.is_digital_only">{{ 'shipping'| translate }} <span>{{ (order.shipping_total ? order.shipping_total : 0) | currencySymbol }}</span></li>
                             <li>{{ 'tax'| translate }} <span>{{ (order.tax_total ? order.tax_total : 0) | currencySymbol }}</span></li>
                             <li class="txt-primary fw-bold" *ngIf="order.points_amount != 0">{{ 'points'| translate }} <span>{{ order.points_amount | currencySymbol }}</span></li>
                             <li class="txt-primary fw-bold" *ngIf="order.wallet_balance != 0">{{ 'wallet_balance'| translate }} <span>{{ order.wallet_balance | currencySymbol }}</span></li>
                             <li class="txt-primary fw-bold" *ngIf="order.coupon_total_discount != 0">{{ 'discount'| translate }} <span>{{ order.coupon_total_discount | currencySymbol }}</span></li>
-                            <li>{{ 'total'| translate }} <span>{{ (order.total ? order.total : 0) | currencySymbol }}</span></li>
+                            <li>{{ 'Total'| translate }} <span>{{ (order.total ? order.total : 0) | currencySymbol }}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -186,11 +186,11 @@
                 <table class="table product-table">
                     <thead>
                         <tr>
-                            <th scope="col">{{ 'order_number' | translate }}</th>
-                            <th scope="col">{{ 'order_date' | translate }}</th>
-                            <th scope="col">{{ 'total_amount' | translate }}</th>
-                            <th scope="col">{{ 'status' | translate }}</th>
-                            <th scope="col">{{ 'action' | translate }}</th>
+                            <th scope="col">{{ 'Order_number' | translate }}</th>
+                            <th scope="col">{{ 'Order_date' | translate }}</th>
+                            <th scope="col">{{ 'Total_amount' | translate }}</th>
+                            <th scope="col">{{ 'Status' | translate }}</th>
+                            <th scope="col">{{ 'Action' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -1,6 +1,6 @@
 <div class="title-header">
     <div class="d-flex align-items-center">
-        <h5>{{ 'notifications' | translate }}</h5>
+        <h5>{{ 'Notifications' | translate }}</h5>
     </div>
 </div>
 <ul class="notification-list" *ngIf="(notification$ | async)?.length">
@@ -12,7 +12,7 @@
 <app-no-data
     [class]="'no-data-added'"
     [image]="'assets/svg/empty-items.svg'"
-    [text]="'no_notifications_found'"
-    [description]="'You_have_not_notification_yet'"
+    [text]="'No Notifications Found'"
+    [description]="'You Have Not Notification yet'"
     *ngIf="!(notification$ | async)?.length">
 </app-no-data>

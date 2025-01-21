@@ -8,14 +8,14 @@
     [type]="'button'"
     *ngIf="style == 'basic'">
    <select class="form-select locat-name" id="selectedCategory"  [formControl]="selectedCategory">
-      <option value="" selected  >{{ 'all_category' | translate }}</option>
+      <option value="" selected  >{{ 'All Category' | translate }}</option>
       <ng-container *ngFor="let category of categories">
         <option [ngValue]="category?.id">{{ category.name }}</option>
       </ng-container>
     </select>
   </app-button>
   <div class="search-suggestion-wrap">
-    <input type="search" class="form-control" placeholder="{{'search_text' | translate}}" [formControl]="term" (input)="onInputChange()" (click)="focusInput(true)" (keydown.enter)="onEnterKey()">
+    <input type="search" class="form-control" placeholder="{{'Search for Products, Brand and More ' | translate}}" [formControl]="term" (input)="onInputChange()" (click)="focusInput(true)" (keydown.enter)="onEnterKey()">
     <app-search-dropdown 
       [term]="term.value || ''" 
       [selectedCategory]="selectedCategory.value || ''"

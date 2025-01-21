@@ -55,8 +55,8 @@
       <app-no-data
         [class]="'no-data-added collection-no-data'"
         [image]="'assets/svg/no-product.svg'"
-        [text]="'sorry_cant_find_products_looking'"
-        [description]="'please_check_misspelt_something_searching_other_way'"
+        [text]="'Sorry Cant Find Products Looking'"
+        [description]="'Please Check Misspelt Something Searching Other Way'"
         *ngIf="!products?.length && !productService.skeletonLoader">
       </app-no-data>
   </div>

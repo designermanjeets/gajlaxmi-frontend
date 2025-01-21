@@ -82,3 +82,28 @@
 // Themes
 @import "themes/dark";
 @import "themes/rtl";
+
+.user-dashboard-section .dashboard-left-sidebar .user-nav-pills .logout-cls .btn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px;
+}
+header .top-nav .navbar-top .middle-box .search-box .input-group button {
+  background-color: #000000;
+  color: #ffffff;
+  height: 51px;
+  padding: 14px 20px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+footer.section-t-space {
+  margin-top: 30px;
+}
+footer .sub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px dashed #c1c1c1;
+}

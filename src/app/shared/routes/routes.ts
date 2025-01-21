@@ -9,14 +9,43 @@ export const content: Routes = [
         loadChildren: () => import("../../components/themes/themes.module").then((m) => m.ThemesModule)
     },
     {
+        path: 'privacy-policy',
+        loadChildren: () =>
+            import('../../privacy-policy/privacy-policy.module').then(
+                (m) => m.PrivacyPolicyModule
+            ),
+    },
+
+    {
+        path: 'return-exchange',
+        loadChildren: () =>
+            import('../../return-exchange/return-exchange.module').then(
+                (m) => m.ReturnExchangeModule
+            ),
+    },
+
+    {
+        path: 'term-condition',
+        loadChildren: () =>
+            import('../../term-condition/term-condition.module').then(
+                (m) => m.TermConditionModule
+            ),
+    },
+
+    {
+        path: "shipping-delevary",
+        loadChildren: () => import("../../shipping-delevary/shipping-delevary.module").then((m) => m.ShippingDelevaryModule)
+    },
+
+    {
         path: "auth",
         loadChildren: () => import("../../components/auth/auth.module").then((m) => m.AuthModule),
-        canActivateChild : [AuthGuard]
+        canActivateChild: [AuthGuard]
     },
     {
         path: "account",
         loadChildren: () => import("../../components/account/account.module").then((m) => m.AccountModule),
-        canActivate : [AuthGuard]
+        canActivate: [AuthGuard]
     },
     {
         path: "",

@@ -1,6 +1,6 @@
 <div class="title-header">
     <div class="d-flex align-items-center">
-        <h5>{{ 'points' | translate }}</h5>
+        <h5>{{ 'Points' | translate }}</h5>
     </div>
 </div>
 <div class="total-box mt-0" *ngIf="(point$ | async)?.transactions?.data?.length">
@@ -10,28 +10,28 @@
                 <div class="wallet-point-box">
                     <img src="assets/images/svg/coin.svg" alt="coin" class="img-fluid">
                     <div class="totle-detail">
-                        <h5>{{ 'total_points'| translate}}</h5>
+                        <h5>{{ 'Total Points'| translate}}</h5>
                         <h3>{{ ((point$ | async) ? (point$ | async)?.balance : 0) }}</h3>
                     </div>
                 </div>
                 <div class="point-ratio">
                     <h3 class="counter">
                         <i class="ri-information-line me-2"></i>
-                        {{ '1_point'| translate}} = {{ (1 / (setting$ | async)?.wallet_points?.point_currency_ratio!) | currencySymbol }} {{ 'balance'| translate}}
+                        {{ '1_point'| translate}} = {{ (1 / (setting$ | async)?.wallet_points?.point_currency_ratio!) | currencySymbol }} {{ 'Balance'| translate}}
                     </h3>
                 </div>
             </div>
         </div>
     </div>
     <div class="wallet-table">
-        <h4 class="user-dashboard-title">{{ 'transactions'| translate}}</h4>
+        <h4 class="user-dashboard-title">{{ 'Transactions'| translate}}</h4>
         <table>
             <tbody>
                 <tr>
-                    <th>{{ 'date'| translate}}</th>
-                    <th>{{ 'points'| translate}}</th>
-                    <th>{{ 'remark'| translate}}</th>
-                    <th>{{ 'status'| translate}}</th>
+                    <th>{{ 'Date'| translate}}</th>
+                    <th>{{ 'Points'| translate}}</th>
+                    <th>{{ 'Remark'| translate}}</th>
+                    <th>{{ 'Status'| translate}}</th>
                 </tr>
                 <tr *ngFor="let transaction of (point$ | async)?.transactions?.data let i = index">
                     <td>{{ transaction?.created_at | date: 'dd MMM yyyy hh:mm:a' }}</td>
