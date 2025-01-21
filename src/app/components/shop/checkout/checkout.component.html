@@ -8,35 +8,35 @@
                     <div class="checkout-form-section" *ngIf="(setting$ | async)?.activation?.guest_checkout && !(accessToken$ | async)">
                         <div class="checkbox-main-box">
                             <div class="checkout-title1">
-                                <h2>{{ 'account_details' | translate }}</h2>
+                                <h2>{{ 'Account Details' | translate }}</h2>
                             </div>
                             <form [formGroup]="form" class="checkout-form row">
                                 <div class="col-md-4">
                                     <div class="mb-3 form-box">
-                                        <label for="name" class="form-label">{{ 'name' | translate }}</label>
-                                        <input type="text" class="form-control" formControlName="name" placeholder="{{ 'enter_name' | translate }}" id="name">
+                                        <label for="name" class="form-label">{{ 'Name' | translate }}</label>
+                                        <input type="text" class="form-control" formControlName="name" placeholder="{{ 'Enter Name' | translate }}" id="name">
                                         <div class="invalid-feedback"
                                             *ngIf="form?.controls?.['name']?.touched && form.controls['name']?.errors?.['required']">
-                                            {{ 'name_is_required' | translate }}
+                                            {{ 'Name Is Required' | translate }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="mb-3 form-box">
-                                        <label for="email" class="form-label">{{ 'email' | translate }}</label>
-                                        <input type="email" class="form-control" placeholder="{{ 'enter_email_address' | translate }}" formControlName="email" id="email">
+                                        <label for="email" class="form-label">{{ 'Email' | translate }}</label>
+                                        <input type="email" class="form-control" placeholder="{{ 'Enter Email Address' | translate }}" formControlName="email" id="email">
                                         <div class="invalid-feedback"
                                             *ngIf="form?.controls?.['email']?.touched && form.controls['email']?.errors?.['required']">
-                                            {{ 'email_is_required' | translate }}
+                                            {{ 'Email is Required' | translate }}
                                         </div>
                                         <div *ngIf="form.controls['email'].touched && form.controls['email'].errors?.['email']" class="invalid-feedback">
-                                            {{ 'invalid_email' | translate }}
+                                            {{ 'Invalid Email' | translate }}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 phone-field">
                                     <div class="form-box position-relative">
-                                      <label class="form-label" for="phoneno">{{ 'phone_number' | translate }}</label>
+                                      <label class="form-label" for="phoneno">{{ 'Phone Number' | translate }}</label>
                                       <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes"
                                         formControlName="country_code">
                                         <ng-template #template let-data="data">
@@ -53,22 +53,22 @@
                                     </div>
                                     <div class="invalid-feedback"
                                         *ngIf="form?.controls?.['phone']?.touched && form.controls['phone']?.errors?.['required']">
-                                        {{ 'phone_is_required' | translate }}
+                                        {{ 'Phone is Required' | translate }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="mb-3 form-box form-checkbox">
                                         <input type="checkbox" class="form-check-input checkbox_animated" id="account" formControlName="create_account">
-                                        <label class="form-check-label" for="account">{{ 'create_an_account?' | translate }}</label>
+                                        <label class="form-check-label" for="account">{{ 'Create an Account?' | translate }}</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6" *ngIf="form.controls['create_account'].value">
                                     <div class="mb-3 form-box">
-                                        <label for="pass" class="form-label">{{ 'password' | translate }}</label>
-                                        <input type="password" class="form-control" formControlName="password" placeholder="{{ 'enter_password' | translate }}" id="pass">
+                                        <label for="pass" class="form-label">{{ 'Password' | translate }}</label>
+                                        <input type="password" class="form-control" formControlName="password" placeholder="{{ 'Enter Password' | translate }}" id="pass">
                                         <div class="invalid-feedback"
                                             *ngIf="form?.controls?.['password']?.touched && form.controls['password']?.errors?.['required']">
-                                            {{ 'password_is_required' | translate }}
+                                            {{ 'Password  is Required' | translate }}
                                         </div>
                                     </div>
                                 </div>
@@ -76,73 +76,73 @@
                         </div>
                         <div class="checkbox-main-box">
                             <div class="checkout-title1">
-                                <h2>{{ 'shipping_details' | translate }}</h2>
+                                <h2>{{ 'Shipping Details' | translate }}</h2>
                             </div>
                             <form [formGroup]="form" class="checkout-form">
                                 <div class="row" formGroupName="shipping_address">
                                     <div class="col-md-12">
                                         <div class="mb-3 form-box">
-                                            <label for="sname" class="form-label">{{ 'title' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="title" id="sname" placeholder="{{ 'enter_name' | translate }}">
+                                            <label for="sname" class="form-label">{{ 'Title' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="title" id="sname" placeholder="{{ 'Enter Name' | translate }}">
                                             <div *ngIf="form.get('shipping_address.title')?.touched && form.get('shipping_address.title')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'title_is_required' | translate }}
+                                                {{ 'Title is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="mb-3 form-box">
-                                            <label for="saddress" class="form-label">{{ 'address' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="street" id="saddress" placeholder="{{ 'enter_address' | translate }}">
+                                            <label for="saddress" class="form-label">{{ 'Address' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="street" id="saddress" placeholder="{{ 'Enter Address' | translate }}">
                                             <div *ngIf="form.get('shipping_address.street')?.touched && form.get('shipping_address.street')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'address_is_required' | translate }}
+                                                {{ 'Address is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="scountry" class="form-label">{{ 'country' | translate }}</label>
+                                            <label for="scountry" class="form-label">{{ 'Country' | translate }}</label>
                                             <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []"
-                                                [placeholder]="'select_country' | translate" (update)="shippingCountryChange($event)"
+                                                [placeholder]="'Select Country' | translate" (update)="shippingCountryChange($event)"
                                                 formControlName="country_id"
                                                 resettable>
                                             </select2>
                                             <div *ngIf="form.get('shipping_address.country_id')?.touched && form.get('shipping_address.country_id')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'country_is_required' | translate }}
+                                                {{ 'Country is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="sstate" class="form-label">{{ 'state' | translate }}</label>
+                                            <label for="sstate" class="form-label">{{ 'State' | translate }}</label>
                                             <select2 class="custom-select" [data]="(shippingStates$ | async) ? (shippingStates$ | async)! : []"
-                                            [placeholder]="'select_state' | translate" formControlName="state_id">
+                                            [placeholder]="'Select State' | translate" formControlName="state_id">
                                             <div *ngIf="form.get('shipping_address.state_id')?.touched && form.get('shipping_address.state_id')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'state_is_required' | translate }}
+                                                {{ 'State is Required' | translate }}
                                             </div>
                                           </select2>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="scity" class="form-label">{{ 'city' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="city" id="scity" placeholder="{{ 'enter_city' | translate }}">
+                                            <label for="scity" class="form-label">{{ 'City' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="city" id="scity" placeholder="{{ 'Enter City' | translate }}">
                                             <div *ngIf="form.get('shipping_address.city')?.touched && form.get('shipping_address.city')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'city_is_required' | translate }}
+                                                {{ 'City is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="spincode" class="form-label">{{ 'pincode' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="pincode"  id="spincode" placeholder="{{ 'enter_pincode' | translate }}">
+                                            <label for="spincode" class="form-label">{{ 'Pincode' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="pincode"  id="spincode" placeholder="{{ 'Enter Pincode' | translate }}">
                                             <div *ngIf="form.get('shipping_address.pincode')?.touched && form.get('shipping_address.pincode')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'pincode_is_required' | translate }}
+                                                {{ 'Pincode is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12 phone-field">
                                         <div class="form-box position-relative">
-                                          <label class="form-label" for="phone">{{ 'phone_number' | translate }}</label>
+                                          <label class="form-label" for="phone">{{ 'Phone Number' | translate }}</label>
                                           <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes"
                                             formControlName="country_code">
                                             <ng-template #template let-data="data">
@@ -155,10 +155,10 @@
                                             </ng-template>
                                           </select2>
                                           <input type="number" class="form-control intl-input-padding" formControlName="phone"
-                                            placeholder="{{ 'enter_phone' | translate }}" name="phone">
+                                            placeholder="{{ 'Enter Phone' | translate }}" name="phone">
                                         </div>
                                         <div *ngIf="form.get('shipping_address.phone')?.touched && form.get('shipping_address.phone')?.errors?.['required']" class="invalid-feedback">
-                                            {{ 'phone_is_required' | translate }}
+                                            {{ 'Phone is Required' | translate }}
                                         </div>
                                     </div>
                                 </div>
@@ -166,79 +166,79 @@
                         </div>
                         <div class="checkbox-main-box">
                             <div class="checkout-title1">
-                                <h2>{{ 'billing_details' | translate }}</h2>
+                                <h2>{{ 'Billing Details' | translate }}</h2>
                             </div>
                             <form [formGroup]="form" class="checkout-form">
                                 <div class="row" formGroupName="billing_address">
                                     <div class="col-md-12" *ngIf="form.controls['shipping_address']?.valid">
                                         <div class="mb-3 form-box form-checkbox">
                                             <input type="checkbox" class="form-check-input checkbox_animated" id="same_shipping" formControlName="same_shipping">
-                                            <label class="form-check-label" for="same_shipping">{{ 'same_as_shipping' | translate }}</label>
+                                            <label class="form-check-label" for="same_shipping">{{ 'Same as Shipping' | translate }}</label>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3 form-box">
-                                            <label for="name" class="form-label">{{ 'title' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="title" id="name" placeholder="{{ 'enter_name' | translate }}">
+                                            <label for="name" class="form-label">{{ 'Title' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="title" id="name" placeholder="{{ 'Enter Name' | translate }}">
                                             <div *ngIf="form.get('billing_address.title')?.touched && form.get('billing_address.title')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'title_is_required' | translate }}
+                                                {{ 'Title is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="mb-3 form-box">
-                                            <label for="address" class="form-label">{{ 'address' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="street" id="address" placeholder="{{ 'enter_address' | translate }}">
+                                            <label for="address" class="form-label">{{ 'Address' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="street" id="address" placeholder="{{ 'Enter Address' | translate }}">
                                             <div *ngIf="form.get('billing_address.street')?.touched && form.get('billing_address.street')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'address_is_required' | translate }}
+                                                {{ 'Address is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="country" class="form-label">{{ 'country' | translate }}</label>
+                                            <label for="country" class="form-label">{{ 'Country' | translate }}</label>
                                             <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []"
-                                                [placeholder]="'select_country' | translate" (update)="billingCountryChange($event)"
+                                                [placeholder]="'Select Country' | translate" (update)="billingCountryChange($event)"
                                                 formControlName="country_id" resettable>
                                             </select2>
                                             <div *ngIf="form.get('billing_address.country_id')?.touched && form.get('billing_address.country_id')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'country_is_required' | translate }}
+                                                {{ 'Country is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="state" class="form-label">{{ 'state' | translate }}</label>
+                                            <label for="state" class="form-label">{{ 'State' | translate }}</label>
                                             <select2 class="custom-select" [data]="(billingStates$ | async) ? (billingStates$ | async)! : []"
                                                 formControlName="state_id"
-                                                [placeholder]="'select_state' | translate">
+                                                [placeholder]="'Select State' | translate">
                                             </select2>
                                             <div *ngIf="form.get('billing_address.state_id')?.touched && form.get('billing_address.state_id')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'state_is_required' | translate }}
+                                                {{ 'State is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="city" class="form-label">{{ 'city' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="city" id="city" placeholder="{{ 'enter_city' | translate }}">
+                                            <label for="city" class="form-label">{{ 'City' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="city" id="city" placeholder="{{ 'Enter City' | translate }}">
                                             <div *ngIf="form.get('billing_address.city')?.touched && form.get('billing_address.city')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'city_is_required' | translate }}
+                                                {{ 'City is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3 form-box">
-                                            <label for="pincode" class="form-label">{{ 'pincode' | translate }}</label>
-                                            <input type="text" class="form-control" formControlName="pincode" id="pincode" placeholder="{{ 'enter_pincode' | translate }}">
+                                            <label for="pincode" class="form-label">{{ 'Pincode' | translate }}</label>
+                                            <input type="text" class="form-control" formControlName="pincode" id="pincode" placeholder="{{ 'Enter Pincode' | translate }}">
                                             <div *ngIf="form.get('billing_address.pincode')?.touched && form.get('billing_address.pincode')?.errors?.['required']" class="invalid-feedback">
-                                                {{ 'pincode_is_required' | translate }}
+                                                {{ 'Pincode is Required' | translate }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12 phone-field">
                                         <div class="form-box position-relative">
-                                          <label class="form-label" for="phone">{{ 'phone_number' | translate }}</label>
+                                          <label class="form-label" for="phone">{{ 'Phone Number' | translate }}</label>
                                           <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes"
                                             formControlName="country_code">
                                             <ng-template #template let-data="data">
@@ -251,10 +251,10 @@
                                             </ng-template>
                                           </select2>
                                           <input type="number" class="form-control intl-input-padding" formControlName="phone"
-                                            placeholder="{{ 'enter_phone' | translate }}" name="phone">
+                                            placeholder="{{ 'Enter Phone' | translate }}" name="phone">
                                         </div>
                                         <div *ngIf="form.get('billing_address.phone')?.touched && form.get('billing_address.phone')?.errors?.['required']" class="invalid-feedback">
-                                            {{ 'phone_is_required' | translate }}
+                                            {{ 'Phone is Required' | translate }}
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +262,7 @@
                         </div>
                         <div class="checkbox-main-box">
                             <div class="checkout-title1">
-                                <h2>{{ 'delivery_options' | translate }}</h2>
+                                <h2>{{ 'Delivery Options' | translate }}</h2>
                             </div>
                             <app-delivery-block
                                 [setting]="(setting$ | async)!"
@@ -271,10 +271,10 @@
                         </div>
                         <div class="checkbox-main-box">
                             <div class="checkout-title1">
-                                <h2>{{ 'payment_options' | translate }}</h2>
+                                <h2>{{ 'Payment Options' | translate }}</h2>
                             </div>
                             <div class="empty-box" *ngIf="!(setting$ | async)?.payment_methods?.length">
-                                <h2>{{ 'no_payment_options_found' | translate }}</h2>
+                                <h2>{{ 'No Payment Options Found' | translate }}</h2>
                             </div>
                             <app-payment-block
                                 [setting]="(setting$ | async)!"
@@ -290,10 +290,10 @@
                                 </div>
                                 <div class="checkout-box">
                                     <div class="checkout-title">
-                                        <h4>{{ 'shipping_address' | translate }}</h4>
+                                        <h4>{{ 'Shipping Address' | translate }}</h4>
                                         <a href="javascript:void(0)" class="d-flex align-items-center fw-bold"
                                             (click)="AddressModal.openModal()">
-                                            <i class="ri-add-line me-1"></i> {{ 'add_new' | translate }}
+                                            <i class="ri-add-line me-1"></i> {{ 'Add New' | translate }}
                                         </a>
                                     </div>
                                     <div class="checkout-detail">
@@ -311,10 +311,10 @@
                                 </div>
                                 <div class="checkout-box">
                                     <div href="javascript:void(0)" class="checkout-title">
-                                        <h4>{{ 'billing_address' | translate }}</h4>
+                                        <h4>{{ 'Billing_address' | translate }}</h4>
                                         <a href="javascript:void(0)" class="d-flex align-items-center fw-bold"
                                             (click)="AddressModal.openModal()">
-                                            <i class="ri-add-line me-1"></i> {{ 'add_new' | translate }}
+                                            <i class="ri-add-line me-1"></i> {{ 'Add New' | translate }}
                                         </a>
                                     </div>
                                     <div class="checkout-detail">
@@ -332,10 +332,10 @@
                                 </div>
                                 <div class="checkout-box">
                                     <div class="checkout-title">
-                                        <h4>{{ 'delivery_options' | translate }}</h4>
+                                        <h4>{{ 'Delivery Options' | translate }}</h4>
                                     </div>
                                     <div class="empty-box" *ngIf="!(user$ | async)">
-                                        <h2>{{ 'no_delivery_options_found' | translate }}</h2>
+                                        <h2>{{ 'No Delivery Options Found' | translate }}</h2>
                                     </div>
                                     <app-delivery-block
                                         [setting]="(setting$ | async)!"
@@ -349,10 +349,10 @@
                                 </div>
                                 <div class="checkout-box">
                                     <div class="checkout-title">
-                                        <h4>{{ 'payment_options' | translate }}</h4>
+                                        <h4>{{ 'Payment Options' | translate }}</h4>
                                     </div>
                                     <div class="empty-box" *ngIf="!(user$ | async)">
-                                        <h2>{{ 'no_payment_options_found' | translate }}</h2>
+                                        <h2>{{ 'No Payment Options Found' | translate }}</h2>
                                     </div>
                                     <app-payment-block
                                         [setting]="(setting$ | async)!"
@@ -369,14 +369,14 @@
                     <div class="card-body">
                         <div class="title-header">
                             <div class="d-flex align-items-center">
-                                <h5>{{ 'checkout' | translate }}</h5>
+                                <h5>{{ 'Checkout' | translate }}</h5>
                             </div>
                         </div>
                         <div class="product-details">
                             <app-no-data
                                 [class]="'empty-cart'"
                                 [image]="'assets/svg/empty-items.svg'"
-                                [text]="'no_items_cart'"
+                                [text]="'No Items Cart'"
                                 *ngIf="!(cartItem$ | async)?.length">
                             </app-no-data>
                             <ul class="cart-listing" *ngIf="(cartItem$ | async)?.length">
@@ -406,62 +406,62 @@
                                     </div>
                                     <ul class="summary-total">
                                         <li>
-                                            <h4>{{ 'subtotal' | translate }}</h4>
+                                            <h4>{{ 'Subtotal' | translate }}</h4>
                                             <h4 class="price">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.sub_total | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.sub_total | currencySymbol) : 'Not Calculated Yet' | translate ) }}
                                             </h4>
                                         </li>
                                         <li *ngIf="!(cartDigital$ | async)">
-                                            <h4>{{ 'shipping' | translate }}</h4>
+                                            <h4>{{ 'Shipping' | translate }}</h4>
                                             <h4 class="price">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.shipping_total | currencySymbol) : 'not_calculated_yet' | translate) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.shipping_total | currencySymbol) : 'Not Calculated Yet' | translate) }}
                                             </h4>
                                         </li>
                                         <li>
-                                            <h4>{{ 'tax' | translate  }}</h4>
+                                            <h4>{{ 'Tax' | translate  }}</h4>
                                             <h4 class="price">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.tax_total | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.tax_total | currencySymbol) : 'Not Calculated Yet' | translate ) }}
                                             </h4>
                                         </li>
                                         <li *ngIf="(user$ | async) && checkoutTotal && (user$ | async)?.point?.balance">
                                             <h4 [class]="form.controls['points_amount'].value ? 'txt-primary fw-bold' : 'text-muted'">
-                                                {{ 'points' | translate  }}
+                                                {{ 'Points' | translate  }}
                                             </h4>
                                             <h4 [class]="form.controls['points_amount'].value ? 'txt-primary fw-bold price' : 'text-muted price'">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.convert_point_amount! | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.convert_point_amount! | currencySymbol) : 'Not Calculated Yet' | translate ) }}
                                             </h4>
                                         </li>
                                         <li class="border-cls"
                                             *ngIf="(user$ | async) && checkoutTotal && (user$ | async)?.point?.balance">
-                                            <label class="form-check-label m-0" for="ponts">{{ 'point_text' | translate }}</label>
+                                            <label class="form-check-label m-0" for="ponts">{{ 'Point Text' | translate }}</label>
                                             <input class="checkbox_animated check-it" type="checkbox" id="ponts" (change)="togglePoint($event)">
                                         </li>
                                         <li *ngIf="(user$ | async) && checkoutTotal && (user$ | async)?.wallet?.balance">
                                             <h4 [class]="form.controls['wallet_balance'].value ? 'txt-primary fw-bold' : 'text-muted'">
-                                                {{ 'wallet_balance' | translate  }}
+                                                {{ 'Wallet Balance' | translate  }}
                                             </h4>
                                             <h4 [class]="form.controls['wallet_balance'].value ? 'txt-primary fw-bold price' : 'text-muted price'">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.convert_wallet_balance! | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.convert_wallet_balance! | currencySymbol) : 'Not Calculated Yet' | translate ) }}
                                             </h4>
                                         </li>
                                         <li class="border-cls" *ngIf="(user$ | async) && checkoutTotal && (user$ | async)?.wallet?.balance">
-                                            <label class="form-check-label m-0" for="wallet">{{ 'wallet_text' | translate }}</label>
+                                            <label class="form-check-label m-0" for="wallet">{{ 'Wallet Text' | translate }}</label>
                                             <input class="checkbox_animated check-it" type="checkbox" id="wallet" (change)="toggleWallet($event)">
                                         </li>
                                         <li class="coupon-sec" *ngIf="(user$ | async) && checkoutTotal">
                                             <a class="promocode-title" (click)="showCoupon()" *ngIf="!coupon && !appliedCoupon">
-                                                <h4>{{ 'have_a_promo_code?' | translate }}</h4>
+                                                <h4>{{ 'Have a Promo Code?' | translate }}</h4>
                                             </a>
                                             <div class="w-100" *ngIf="coupon && !appliedCoupon">
                                                 <div class="coupon-box mt-2 d-flex w-100">
                                                     <div class="input-group" [class.coupon-error]="couponError">
-                                                        <input type="text" [class]="'form-control'" [class.is-invalid]="couponError" id="coupon" #cpn placeholder="{{ 'enter_coupon_code_here'  | translate  }}...">
+                                                        <input type="text" [class]="'form-control'" [class.is-invalid]="couponError" id="coupon" #cpn placeholder="{{ 'Enter Promo Code Here'  | translate  }}...">
                                                         <app-button
                                                             [class]="'btn-apply'"
                                                             [type]="'button'"
                                                             [id]="'coupon_apply'"
                                                             (click)="cpn.value && setCoupon(cpn.value)">
-                                                            {{ 'apply' | translate }}
+                                                            {{ 'Apply' | translate }}
                                                         </app-button>
                                                         <div class="invalid-feedback" *ngIf="couponError">
                                                             {{ couponError }}
@@ -473,18 +473,18 @@
                                                 <div>
                                                     <img src="assets/images/offer.gif" class="img-fluid" alt="offer gif">
                                                     <h4>
-                                                        {{ 'you_saved' | translate }}
+                                                        {{ 'You Saved' | translate }}
                                                         <span>{{ checkoutTotal.total.coupon_total_discount | currencySymbol }}</span>
-                                                        {{ 'with_this_code' | translate }} 🎉 <p>{{ 'coupon_applied' | translate }}</p>
+                                                        {{ 'With This Code' | translate }} 🎉 <p>{{ 'Coupon Applied' | translate }}</p>
                                                     </h4>
                                                 </div>
-                                                <a href="javascript:void(0)" (click)="couponRemove()">{{ 'remove' | translate}}</a>
+                                                <a href="javascript:void(0)" (click)="couponRemove()">{{ 'Remove' | translate}}</a>
                                             </div>
                                         </li>
                                         <li class="list-total">
-                                            <h4>{{ 'total' | translate }}</h4>
+                                            <h4>{{ 'Total' | translate }}</h4>
                                             <h4 class="price">
-                                                {{ (checkoutTotal ? (checkoutTotal.total.total | currencySymbol) : 'not_calculated_yet' | translate ) }}
+                                                {{ (checkoutTotal ? (checkoutTotal.total.total | currencySymbol) : 'Not Calculated Yet' | translate ) }}
                                             </h4>
                                         </li>
                                     </ul>
@@ -492,7 +492,7 @@
                                         [class]="'btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold'"
                                         [id]="'place_order'"
                                         [disabled]="form.valid && checkoutTotal ? false : true">
-                                        {{ 'place_order' | translate }}
+                                        {{ 'Place Order' | translate }}
                                     </app-button>
                                 </div>
                             </form>

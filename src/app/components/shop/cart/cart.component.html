@@ -64,27 +64,27 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <h5>{{ 'total' | translate }}: {{ (item?.variation ? item.variation.sale_price : item.product.sale_price) * item?.quantity! | currencySymbol }}</h5>
+                                                        <h5>{{ 'Total' | translate }}: {{ (item?.variation ? item.variation.sale_price : item.product.sale_price) * item?.quantity! | currencySymbol }}</h5>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="price">
-                                        <h4 class="table-title text-content">{{ 'price' | translate }}</h4>
+                                        <h4 class="table-title text-content">{{ 'Price' | translate }}</h4>
                                         <h5>
                                             {{ (item?.variation ? item?.variation?.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price) | currencySymbol }}
                                             <del class="text-content" *ngIf="item?.product?.discount">{{ (item.variation ? item.variation.price : item.product.price) | currencySymbol }}</del>
                                         </h5>
                                         <h6 class="theme-color" *ngIf="item.product.discount">
-                                            {{ 'you_save' | translate }} : {{ ((item.variation ? item.variation.price
+                                            {{ 'You Save' | translate }} : {{ ((item.variation ? item.variation.price
                                             : item.product.price) - (item.variation
                                             ? item.variation.sale_price
                                             : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price!)) | currencySymbol }}
                                         </h6>
                                     </td>
                                     <td class="quantity">
-                                        <h4 class="table-title text-content">{{ 'quantity' | translate }}</h4>
+                                        <h4 class="table-title text-content">{{ 'Quantity' | translate }}</h4>
                                         <div class="quantity-price">
                                             <div class="cart_qty">
                                                 <div class="input-group">
@@ -110,13 +110,13 @@
                                         </div>
                                     </td>
                                     <td class="subtotal">
-                                        <h4 class="table-title text-content">{{ 'total' | translate }}</h4>
+                                        <h4 class="table-title text-content">{{ 'Total' | translate }}</h4>
                                         <h5>{{ (item.variation ? item.variation.sale_price : item?.product && item?.wholesale_price ? item?.wholesale_price! : item?.product?.sale_price!) * item.quantity | currencySymbol }}</h5>
                                     </td>
                                     <td class="save-remove">
-                                        <h4 class="table-title text-content">{{ 'action' | translate }}</h4>
-                                        <a class="save notifi-wishlist" href="javascript:void(0)" (click)="addToWishlist(item)">{{ 'save_for_later' | translate }}</a>
-                                        <a class="remove close_button" href="javascript:void(0)" (click)="delete(item.id)">{{ 'remove' | translate }}</a>
+                                        <h4 class="table-title text-content">{{ 'Action' | translate }}</h4>
+                                        <a class="save notifi-wishlist" href="javascript:void(0)" (click)="addToWishlist(item)">{{ 'Save for Later' | translate }}</a>
+                                        <a class="remove close_button" href="javascript:void(0)" (click)="delete(item.id)">{{ 'Remove' | translate }}</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -127,27 +127,27 @@
             <div class="col-xxl-3 col-xl-4">
                 <div class="summery-box p-sticky">
                     <div class="summery-header">
-                        <h3>{{ 'cart_total' | translate }}</h3>
+                        <h3>{{ 'Cart Total' | translate }}</h3>
                     </div>
                     <div class="summery-contain">
                         <ul>
                             <li>
-                                <h4>{{ 'subtotal' | translate }}</h4>
+                                <h4>{{ 'Subtotal' | translate }}</h4>
                                 <h4 class="price">{{ (cartTotal$ | async) || 0 | currencySymbol }}</h4>
                             </li>
                             <li class="align-items-start" *ngIf="!(cartDigital$ | async)">
-                                <h4>{{ 'shipping' | translate}}</h4>
-                                <h4 class="price text-end">{{ 'cost_at_checkout' | translate }}</h4>
+                                <h4>{{ 'Shipping' | translate}}</h4>
+                                <h4 class="price text-end">{{ 'Cost At Checkout' | translate }}</h4>
                             </li>
                             <li class="align-items-start">
-                                <h4>{{ 'tax' | translate }}</h4>
-                                <h4 class="price text-end">{{ 'cost_at_checkout' | translate }}</h4>
+                                <h4>{{ 'Tax' | translate }}</h4>
+                                <h4 class="price text-end">{{ 'Cost at Checkout' | translate }}</h4>
                             </li>
                         </ul>
                     </div>
                     <ul class="summery-total">
                         <li class="list-total border-top-0">
-                            <h4>{{ 'total' | translate }}</h4>
+                            <h4>{{ 'Total' | translate }}</h4>
                             <h4 class="price theme-color">{{ (cartTotal$ | async) || 0 | currencySymbol }}</h4>
                         </li>
                     </ul>
@@ -155,13 +155,13 @@
                         <ul>
                             <li>
                                 <a class="btn btn-animation proceed-btn fw-bold" [routerLink]="['/checkout/']">
-                                    {{ 'process_to_checkout' | translate }}
+                                    {{ 'Process To Checkout' | translate }}
                                 </a>
                             </li>
                             <li>
                                 <a class="btn shopping-button" [routerLink]="['/collections/']">
                                     <i class="ri-arrow-left-line me-2"></i>
-                                    {{ 'return_to_shopping' | translate }}
+                                    {{ 'Return To Shopping' | translate }}
                                 </a>
                             </li>
                         </ul>

@@ -107,3 +107,19 @@ footer .sub-footer {
   justify-content: center;
   border-top: 1px dashed #c1c1c1;
 }
+.btn-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+  background: transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #ff6b6b;
+  background: linear-gradient(90deg, #1d1d22 0%, #2a2d2d 100%);
+  border: none;
+  z-index: 0;
+}
