@@ -166,7 +166,7 @@
                                     [class]="'btn theme-bg-color view-button icon text-white fw-bold btn-md'"
                                     (click)="addToCart(product)"
                                     *ngIf="((selectedVariation && selectedVariation.status && selectedVariation.quantity >= productQty) || (!selectedVariation && product.quantity >= productQty)) else outStock">
-                                    <i class="ri-shopping-cart-line me-1"></i> {{ 'add_to_cart' | translate }}
+                                    <i class="ri-shopping-cart-line me-1"></i> {{ 'Add To Cart' | translate }}
                                 </app-button>
                                 <ng-template #outStock>
                                     <app-button
@@ -174,7 +174,7 @@
                                         [id]="'cartDetailsbtnOs'+product.id" [spinner]="false" [disabled]="true">
                                         {{
                                             ((selectedVariation && selectedVariation.status && selectedVariation.quantity < productQty || (!selectedVariation && product.quantity < productQty)) ? 'out_of_stock'
-                                            : 'add_to_cart') | translate }}
+                                            : 'Add To Cart') | translate }}
                                     </app-button>
                                 </ng-template>
                             </ng-container>
