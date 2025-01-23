@@ -33,7 +33,7 @@ export const content: Routes = [
     },
 
     {
-        path: "shipping-delivary",
+        path: "shipping-delivery",
         loadChildren: () => import("../../shipping-delevary/shipping-delevary.module").then((m) => m.ShippingDelevaryModule)
     },
 
