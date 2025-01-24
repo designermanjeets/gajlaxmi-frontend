@@ -26,9 +26,9 @@ export class CurrencySymbolPipe implements PipeTransform {
       value = 0;
     };
     value = Number(value);
-    value = (value * this.selectedCurrency?.exchange_rate);
+    //value = (value * this.selectedCurrency?.exchange_rate);
 
-    this.symbol = this.selectedCurrency?.symbol;
+    this.symbol = '₹' //this.selectedCurrency?.symbol;
     position = this.selectedCurrency?.symbol_position;
 
     let formattedValue = this.currencyPipe.transform(value, this.symbol);

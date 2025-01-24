@@ -19,6 +19,7 @@ import { GetThemes } from './shared/action/theme.action';
 import { ThemeOptionService } from './shared/services/theme-option.service';
 import { SettingState } from './shared/state/setting.state';
 import { Values, Analytics } from './shared/interface/setting.interface';
+import { TranslateService } from '@ngx-translate/core';
  
 @Component({
   selector: 'app-root',
@@ -37,7 +38,13 @@ export class AppComponent {
     config: NgbRatingConfig, private actions: Actions,
     private router: Router,
     private store: Store,
-    public seoService: SeoService) {
+    public seoService: SeoService,
+    private translate: TranslateService
+  ) {
+
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
  
     // this.seoService.seo();
     config.max = 5;
