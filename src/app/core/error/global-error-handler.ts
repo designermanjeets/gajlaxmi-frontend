@@ -23,15 +23,15 @@ export class GlobalErrorHandler implements ErrorHandler {
           // Server error
           console.log('Server', error)
           message = errorService.getServerErrorMessage(error);
-          notifier.showError(message);
+          // notifier.showError(message);
         } else {
           // Client Error
           console.log('client', error)
           message = errorService.getClientErrorMessage(error);
-          notifier.showError(message);
+          // notifier.showError(message);
         }
         // Always log errors
-        logger.logError(message);
+        // logger.logError(message);
     }
 
 }
