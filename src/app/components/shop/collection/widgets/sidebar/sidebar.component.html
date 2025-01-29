@@ -26,7 +26,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" ngbAccordionItem [collapsed]="false" *ngIf="(brand$ | async)?.data?.length && !hideFilter?.includes('brand')">
+      <!-- <div class="accordion-item" ngbAccordionItem [collapsed]="false" *ngIf="(brand$ | async)?.data?.length && !hideFilter?.includes('brand')">
         <h2 class="accordion-header" ngbAccordionHeader>
           <button class="accordion-button" ngbAccordionButton>
             <span>{{ 'brand' | translate }}</span>
@@ -37,8 +37,8 @@
             <app-collection-brand-filter [filter]="filter"></app-collection-brand-filter>
           </div>
         </div>
-      </div>
-      <ng-container *ngIf="!filter['store_slug'] && !hideFilter?.includes('attribute')">
+      </div> -->
+      <!-- <ng-container *ngIf="!filter['store_slug'] && !hideFilter?.includes('attribute')">
         <ng-container *ngFor="let attribute of (attribute$ | async)?.data">
           <div class="accordion-item" ngbAccordionItem [collapsed]="false"
             *ngIf="attribute.style !== 'image'">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </ng-container>
-      </ng-container>
+      </ng-container> -->
       <div class="accordion-item" ngbAccordionItem [collapsed]="false" *ngIf="!hideFilter?.includes('price')">
         <h2 class="accordion-header" ngbAccordionHeader>
           <button class="accordion-button" ngbAccordionButton>
@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="accordion-item" ngbAccordionItem [collapsed]="false" *ngIf="!hideFilter?.includes('rating')">
+      <!-- <div class="accordion-item" ngbAccordionItem [collapsed]="false" *ngIf="!hideFilter?.includes('rating')">
         <h2 class="accordion-header" ngbAccordionHeader>
           <button class="accordion-button" ngbAccordionButton>
             <span>{{ 'rating' | translate }}</span>
@@ -81,7 +81,7 @@
           </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </ng-template>
 </div>
