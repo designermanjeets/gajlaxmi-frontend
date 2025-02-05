@@ -105,8 +105,8 @@ export class ThemeOptionState {
                         "disk": "public",
                         "created_by_id": 1,
                         "created_at": "2025-01-21T07:25:43.000000Z",
-                        "asset_url": "\/storage\/3287\/logo-(2).png",
-                        "original_url": "https:\/\/api.fashioncarft.com\/public\/storage\/3287\/logo-(2).png"
+                        "asset_url": "../assets/images/gajlaxmi.png",
+                        "original_url": "../assets/images/gajlaxmi.png"
                     },
                     "footer_logo": {
                         "id": 2153,
@@ -116,8 +116,8 @@ export class ThemeOptionState {
                         "disk": "public",
                         "created_by_id": 1,
                         "created_at": "2025-01-21T07:25:43.000000Z",
-                        "asset_url": "\/storage\/3287\/logo-(2).png",
-                        "original_url": "https:\/\/api.fashioncarft.com\/public\/storage\/3287\/logo-(2).png"
+                        "asset_url": "../assets/images/gajlaxmi.png",
+                        "original_url": "../assets/images/gajlaxmi.png"
                     }
                 },
                 "header": {
