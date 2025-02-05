@@ -41,6 +41,12 @@ export class AddressModalComponent {
       country_code: new FormControl('91', [Validators.required]),
       phone: new FormControl('', [Validators.required, Validators.pattern(/^[0-9]*$/)])
     })
+
+    this.form.controls['phone']?.valueChanges.subscribe((value) => {
+      if(value && value.toString().length > 10) {
+        this.form.controls['phone']?.setValue(+value.toString().slice(0, 10));
+      }
+    });
   }
 
   countryChange(data: Select2UpdateEvent) {
