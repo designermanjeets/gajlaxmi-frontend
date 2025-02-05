@@ -45,8 +45,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        if (error.status === 401 && !req.url.includes('/self')) {
-          console.log(req)
+        if (error.status === 401) {
           // this.notificationService.notification = false;
           this.store.dispatch(new AuthClear());
         }
