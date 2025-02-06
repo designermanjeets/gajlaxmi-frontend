@@ -31,8 +31,8 @@ export const themeOptionsGajLaxmi = {
                 "disk": "public",
                 "created_by_id": 1,
                 "created_at": "2025-01-21T07:26:35.000000Z",
-                "asset_url": "\/storage\/3287\/logo-(2).png",
-                "original_url": "https:\/\/api.fashioncarft.com\/public\/storage\/3287\/logo-(2).png"
+                "asset_url": "../assets/images/gajlaxmi-fav.png",
+                "original_url": "../assets/images/gajlaxmi-fav.png"
             },
             "header_logo": {
                 "id": 2153,
@@ -42,8 +42,8 @@ export const themeOptionsGajLaxmi = {
                 "disk": "public",
                 "created_by_id": 1,
                 "created_at": "2025-01-21T07:25:43.000000Z",
-                "asset_url": "../assets/images/gajlaxmi.png",
-                "original_url": "../assets/images/gajlaxmi.png"
+                "asset_url": "../assets/images/gajlaxmi-white.png",
+                "original_url": "../assets/images/gajlaxmi-white.png"
             },
             "footer_logo": {
                 "id": 2153,
@@ -53,13 +53,13 @@ export const themeOptionsGajLaxmi = {
                 "disk": "public",
                 "created_by_id": 1,
                 "created_at": "2025-01-21T07:25:43.000000Z",
-                "asset_url": "../assets/images/gajlaxmi.png",
-                "original_url": "../assets/images/gajlaxmi.png"
+                "asset_url": "../assets/images/gajlaxmi-white.png",
+                "original_url": "../assets/images/gajlaxmi-white.png"
             }
         },
         "header": {
             "sticky_header_enable": true,
-            "header_options": "basic_header",
+            "header_options": "classic_header",
             "page_top_bar_enable": false,
             "top_bar_content": [
                 {
@@ -91,7 +91,7 @@ export const themeOptionsGajLaxmi = {
             ]
         },
         "footer": {
-            "footer_style": "basic_footer",
+            "footer_style": "classic_footer",
             "bg_image": null,
             "title": null,
             "sub_title": null,
