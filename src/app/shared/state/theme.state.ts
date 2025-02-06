@@ -38,7 +38,8 @@ export class ThemeState {
         next: (result) => {
           var activeTheme: string = '';
           result.data.map(theme => {
-            if(theme.status === 1) { activeTheme = theme.slug}
+            // if(theme.status === 1) { activeTheme = theme.slug} // Force Update
+            if(theme.id === 1) { activeTheme = theme.slug}
           })
           ctx.patchState({
             homePage: result,
