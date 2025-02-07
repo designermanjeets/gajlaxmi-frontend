@@ -38,7 +38,7 @@ export class BasicProductBoxComponent {
 	}
 
   ngOnInit() {
-    console.log(this.product);
+    this.product.rating_count = Math.floor(Math.random() * 3) + 3;
     this.cartItem$.subscribe(items => {
       this.cartItem = items.find(item => item.product.id == this.product.id)!;
     });
