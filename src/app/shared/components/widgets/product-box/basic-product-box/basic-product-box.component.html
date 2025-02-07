@@ -20,7 +20,7 @@
         </div>
         <app-product-hover-action [product]="product" *ngIf="!close"></app-product-hover-action>
     </div>
-    <div class="product-detail">
+    <div class="product-detail" >
         <h6 class="brand-name" *ngIf="product.brand">{{ product.brand.name }}</h6>
         <a [routerLink]="['/product/', product.slug]">
             <h6 class="name">{{ product.name }}</h6>

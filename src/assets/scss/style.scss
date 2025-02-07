@@ -153,8 +153,9 @@ footer .main-footer .address {
 
 .address li a {
   color: #fff !important;
+  font-size: 15px !important;
   line-height: 25px !important;
-  font-weight: 400;
+  font-weight: 300;
 }
 .address li i{
 color:#bfbfbf !important;
@@ -165,4 +166,24 @@ color:#bfbfbf !important;
 .navbar-nav{
   display: flex;
   align-items: center;
+}
+.support-number h4 {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+.support-number h4 {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+}.support-number h2 {
+  font-size: 16px !important;
+  font-weight: 400;
+}
+button#classic_search_text_btn {
+  font-size: 16px;
+}
+p{
+  font-size: 16px !important;
+}
+h6.byers.ng-star-inserted {
+  display: none;
 }

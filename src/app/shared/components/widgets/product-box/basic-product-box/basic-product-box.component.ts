@@ -38,6 +38,7 @@ export class BasicProductBoxComponent {
 	}
 
   ngOnInit() {
+    console.log(this.product);
     this.cartItem$.subscribe(items => {
       this.cartItem = items.find(item => item.product.id == this.product.id)!;
     });
