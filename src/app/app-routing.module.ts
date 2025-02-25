@@ -21,7 +21,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: content,
     canActivate: [ScrollPositionGuard],
-  }
+  },
+  { path: 'contact-us', loadChildren: () => import('./pages/contact-us/contact-us.module').then(m => m.ContactUsModule) }
 ];
 
 @NgModule({
