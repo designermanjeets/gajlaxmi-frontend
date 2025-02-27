@@ -780,3 +780,6 @@ body {
   }
 }
 
+app-product-box:has(.hidden) {
+  display: none !important;
+}
