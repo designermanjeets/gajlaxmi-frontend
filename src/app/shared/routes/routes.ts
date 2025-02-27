@@ -41,6 +41,13 @@ export const content: Routes = [
             ),
     },
 
+    {
+        path: 'refund-and-cancellation',
+        loadChildren: () =>
+            import('../../pages/refund-and-cancellation/refund-and-cancellation.module').then(
+                (m) => m.RefundAndCancellationModule
+            ),
+    },
 
 
     {
