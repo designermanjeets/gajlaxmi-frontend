@@ -783,3 +783,6 @@ body {
 app-product-box:has(.hidden) {
   display: none !important;
 }
+.price-rating .product-rating.custom-rate {
+  display: none;
+}
