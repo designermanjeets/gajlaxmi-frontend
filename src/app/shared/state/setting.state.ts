@@ -46,8 +46,10 @@ export class SettingState {
           }
 
           if(result.values?.payment_methods?.length) {
+            
             customValue = JSON.parse(JSON.stringify(result.values));
             customValue.payment_methods = [result.values.payment_methods[0]];
+             customValue.general.site_name = "Gajlaxmi Fashion";
           }
           ctx.patchState({
           ...state,
