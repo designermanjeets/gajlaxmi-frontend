@@ -34,7 +34,7 @@ export const content: Routes = [
 
 
     {
-        path: 'contact-us',
+        path: 'contactus',
         loadChildren: () =>
             import('../../pages/contact-us/contact-us.module').then(
                 (m) => m.ContactUsModule
