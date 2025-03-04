@@ -98,7 +98,7 @@ export const themeOptionsGajLaxmi = {
             "footer_copyright": true,
             "copyright_content": "Copyright 2025 © GAJLAXMI PROJECTS PRIVATE LIMITED",
             "footer_about": null,
-            "about_address": "Shop No 121 Plot No 26 First Floor, Royal Arcade Road No 44 Pitam pura Near Chunmun Mall, Rani Bagh, North West Delhi, Delhi, Delhi, India, 110034",
+            "about_address": "Shop No 121 Plot No 26 First Floor, Royal Arcade Road No 44 Pitampura Near Chunmun Mall, Rani Bagh, North West Delhi, Delhi, Delhi, India, 110034",
             "about_email": "support@gajlaxmi.com",
             "footer_categories": [],
             "useful_link": [
