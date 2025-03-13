@@ -114,10 +114,12 @@ export class OrderState {
     return this.orderService.placeOrder(action?.payload).pipe(
       tap({
         next: result => {
-          if((action.payload.payment_method == 'cod' || action.payload.payment_method == 'bank_transfer') && !result.is_guest) {
+          if((action.payload.payment_method == 'cod' || action.payload.payment_method == 'cash_free' || action.payload.payment_method == 'sub_paisa' || action.payload.payment_method == 'zyaada_pay' || action.payload.payment_method == 'bank_transfer' || action.payload.payment_method == 'neoKred' || action.payload.payment_method == 'ease_buzz' || action.payload.payment_method == 'zyaada_pay_gaj') && !result.is_guest) {
             this.router.navigateByUrl(`/account/order/details/${result.order_number}`);
-          } else if((action.payload.payment_method == 'cod' || action.payload.payment_method == 'bank_transfer') && result.is_guest) {
+            // setTimeout(() => { window.location.reload() }, 1000);
+          } else if((action.payload.payment_method == 'cod' || action.payload.payment_method == 'cash_free' || action.payload.payment_method == 'sub_paisa' || action.payload.payment_method == 'zyaada_pay' || action.payload.payment_method == 'bank_transfer' || action.payload.payment_method == 'neoKred' || action.payload.payment_method == 'ease_buzz' || action.payload.payment_method == 'zyaada_pay_gaj') && result.is_guest) {
             this.router.navigate([ 'order/details' ], { queryParams: { order_number: result.order_number, email_or_phone: action?.payload.email } });
+            // setTimeout(() => { window.location.reload() }, 1000);
           } else {
             window.open(result.url, "_self");
           }
