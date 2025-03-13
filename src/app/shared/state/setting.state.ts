@@ -82,7 +82,7 @@ export class SettingState {
                 name: 'zyaada_pay_gaj',
                 status: true,
                 title: 'Cash Free',
-                icon: './assets/images/cash_free.jpg'
+                icon: './assets/images/cash_free_new.jpeg'
               },
             ];
             customValue.payment_methods = customPayments;
