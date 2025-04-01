@@ -86,7 +86,7 @@ export class SettingState {
               },
               {
                 name: 'gaj_neokred',
-                status: true,
+                status: false,
                 title: 'Pay By UPI INTENT',
               },
             ];
