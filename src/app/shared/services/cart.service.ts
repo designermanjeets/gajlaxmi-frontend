@@ -177,7 +177,7 @@ export class CartService {
 
   initiateGajLaxmiIntent(data: any): Observable<any> {
     return new Observable(observer => {
-      fetch(`${environment.URL}/gajneocred-initiate-payment`,{
+      fetch(`${environment.URL}/gajlaxmineo-initiate-payment`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

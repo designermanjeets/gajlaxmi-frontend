@@ -85,8 +85,8 @@ export class SettingState {
                 icon: './assets/images/cash_free_new.jpeg'
               },
               {
-                name: 'gaj_neokred',
-                status: false,
+                name: 'gajlaxmi_neo',
+                status: true,
                 title: 'Pay By UPI INTENT',
               },
             ];

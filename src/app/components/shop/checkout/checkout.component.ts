@@ -302,7 +302,7 @@ export class CheckoutComponent {
       case 'zyaada_pay_gaj':
         this.checkout(value);
         break;
-      case 'gaj_neokred':
+      case 'gajlaxmi_neo':
         this.checkout(value);
         break;
       default:
@@ -823,7 +823,7 @@ export class CheckoutComponent {
         if(this.payment_method === 'zyaada_pay_gaj') {
           this.initiateZyaadaPayGajPaymentIntent(this.payment_method, uuid, result);
         }
-        if(this.payment_method === 'gaj_neokred') {
+        if(this.payment_method === 'gajlaxmi_neo') {
           this.initiateGajLaxmiPaymentIntent(this.payment_method, uuid, result);
         }
         },
