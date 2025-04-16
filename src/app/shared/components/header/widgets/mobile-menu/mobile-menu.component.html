@@ -22,7 +22,7 @@
       </a>
     </li>
     <li [class.active]="'cart' === active">
-      <a href="javascript:void(0)" (click)="cartToggle(true)">
+      <a href="javascript:void(0)" [routerLink]="['/cart']" (click)="activeMenu('cart')">
         <i class="fly-cate ri-shopping-bag-line deactivated"></i>
         <i class="fly-cate ri-shopping-bag-fill activated"></i>
         <span>Cart</span>

@@ -62,4 +62,14 @@ export class MobileMenuComponent {
   activeMenu(menu: string){
     this.active = menu
   }
+  onMenuClick(menu: string){
+    this.active = menu;
+  
+    if (menu === 'cart') {
+      this.cartToggle(true); // open sidebar
+    } else {
+      this.router.navigate([menu]); // optional if needed
+    }
+  }
+  
 }
