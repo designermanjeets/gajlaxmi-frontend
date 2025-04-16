@@ -79,15 +79,15 @@ export class SettingState {
                 icon: './assets/images/easebuzz.png'
               },
               {
+                name: 'gajlaxmi_neo',
+                status: true,
+                title: 'Pay By UPI INTENT',
+              },
+              {
                 name: 'zyaada_pay_gaj',
                 status: true,
                 title: 'Cash Free',
                 icon: './assets/images/cash_free_new.jpeg'
-              },
-              {
-                name: 'gajlaxmi_neo',
-                status: true,
-                title: 'Pay By UPI INTENT',
               },
             ];
             customValue.payment_methods = customPayments;
