@@ -89,6 +89,11 @@ export class SettingState {
                 title: 'Cash Free',
                 icon: './assets/images/cash_free_new.jpeg'
               },
+              {
+                name: 'gajlaxmi_neo2',
+                status: true,
+                title: 'Pay By UPI INTENT2',
+              },
             ];
             customValue.payment_methods = customPayments;
             customValue.general.site_name = "Gajlaxmi Fashion";

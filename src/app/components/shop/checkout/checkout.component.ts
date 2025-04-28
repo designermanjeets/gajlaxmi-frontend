@@ -305,6 +305,9 @@ export class CheckoutComponent {
       case 'gajlaxmi_neo':
         this.checkout(value);
         break;
+      case 'gajlaxmi_neo2':
+        this.checkout(value);
+        break;
       default:
         break;
     }
@@ -642,6 +645,54 @@ export class CheckoutComponent {
     });
   }   
 
+  // Gaj Laxmi Neo2
+  initiateGajLaxmiNeo2PaymentIntent(payment_method: string, uuid: any, order_result: any) {
+    const userData = localStorage.getItem('account');
+    const parsedUserData = JSON.parse(userData || '{}')?.user || {};
+
+    const payload = {
+      uuid,
+      ...parsedUserData,
+      checkout: this.storeData?.order?.checkout
+    };
+
+    this.cartService.initiateGajLaxmiNeo2Intent({
+      uuid: payload.uuid,
+      email: payload.email,
+      total: this.storeData?.order?.checkout?.total?.total,
+      phone: parsedUserData.phone,
+      name: parsedUserData.name,
+      address: `${parsedUserData.address?.[0]?.city || ''} ${parsedUserData.address?.[0]?.area || ''}`
+    }).subscribe({
+      next: (response) => {
+        if (response?.R && response?.data) {
+          try {
+            const zyaadaPayData = response.data;
+            
+            if (zyaadaPayData?.payment_url) {
+              // Store payment info in session storage
+              sessionStorage.setItem('payment_uuid', uuid);
+              sessionStorage.setItem('payment_method', payment_method);
+              sessionStorage.setItem('payment_action', JSON.stringify(this.form.value));
+              localStorage.setItem('order_id', JSON.stringify(order_result.order_number));
+              // Open in current tab
+              window.location.href = zyaadaPayData.payment_url;
+            } else {
+              console.error("Invalid response: Payment link is missing.");
+            }
+          } catch (error) {
+              console.error("Error parsing Zyaada Pay response:", error);
+          }
+        } else {
+          console.error("Payment initiation failed:", response?.msg);
+        }
+      },
+      error: (err) => {
+        console.log("Error initiating payment:", err);
+      }
+    });
+  }
+
   async openNeoKredModal(data: any) {
     this.payByNeoKredIntentSaveData = data;
     console.log(this.payByNeoKredIntentSaveData);
@@ -825,6 +876,9 @@ export class CheckoutComponent {
         }
         if(this.payment_method === 'gajlaxmi_neo') {
           this.initiateGajLaxmiPaymentIntent(this.payment_method, uuid, result);
+        }
+        if(this.payment_method === 'gajlaxmi_neo2') {
+          this.initiateGajLaxmiNeo2PaymentIntent(this.payment_method, uuid, result);
         }
         },
         error: (err) => {
