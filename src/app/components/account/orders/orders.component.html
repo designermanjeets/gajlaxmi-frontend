@@ -28,6 +28,9 @@
                             <span *ngIf="order?.payment_method == 'gajlaxmi_neo'">
                                 Pay By UPI INTENT
                             </span>
+                            <span *ngIf="order?.payment_method == 'gajlaxmi_neo2'">
+                                Pay By UPI INTENT2
+                            </span>
                         </td>
                         <td><a [routerLink]="['/account/order/details', order.order_number]"><i class="ri-eye-line"></i></a></td>
                     </tr>
